@@ -7,7 +7,7 @@
 
 ## Changes
 
-Tried fixing the Unknown Command 'patch' error on Windows with Git.
+Tried fixing the `Unknown Command 'patch'` error on Windows with Git.
 
 ## Install
 
