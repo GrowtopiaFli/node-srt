@@ -38,10 +38,12 @@ if (!fs.existsSync(srtSourcePath)) {
     }
     
     console.log("Patch build script");
-    const patch = spawnSync('patch', [ 'configure-data.tcl', '<', '../../scripts/configure-data.tcl.patch' ], { cwd: srtSourcePath, shell: true, stdio: 'inherit' });
-    if (patch.status) {
-      process.exit(patch.status);
-    }
+    // const patch = spawnSync('patch', [ 'configure-data.tcl', '<', '../../scripts/configure-data.tcl.patch' ], { cwd: srtSourcePath, shell: true, stdio: 'inherit' });
+    // if (patch.status) {
+    //   process.exit(patch.status);
+    // }
+  	let patch1 = spawnSync('git', [ 'apply', '../../scripts/configure-data.tcl.patch' ], { cwd: srtSourcePath, shell: true, stdout: process.stdout });
+	  let patch2 = spawnSync('git', [ 'diff' ], { cwd: srtSourcePath, shell: true, stdout: process.stdout ] });
 
     build();
   });
