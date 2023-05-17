@@ -5,6 +5,10 @@
 
 `@eyevinn/srt` is a Node.js Native Addon that provides bindings to [Secure Reliable Transport SDK](https://github.com/Haivision/srt).
 
+## Changes
+
+Tried fixing the Unknown Command 'patch' error on Windows with Git.
+
 ## Install
 
 ```
