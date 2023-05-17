@@ -42,8 +42,8 @@ if (!fs.existsSync(srtSourcePath)) {
     // if (patch.status) {
     //   process.exit(patch.status);
     // }
-  	let patch1 = spawnSync('git', [ 'apply', '../../scripts/configure-data.tcl.patch' ], { cwd: srtSourcePath, shell: true, stdout: process.stdout });
-	  let patch2 = spawnSync('git', [ 'diff' ], { cwd: srtSourcePath, shell: true, stdout: process.stdout });
+  	let patch1 = spawnSync('git', [ 'apply', '../../scripts/configure-data.tcl.patch' ], { cwd: srtSourcePath, shell: true, stdio: [ 'ignore', process.stdout, process.stderr ] });
+	  let patch2 = spawnSync('git', [ 'diff' ], { cwd: srtSourcePath, shell: true, stdio: [ 'ignore', process.stdout, process.stderr ] });
 
     build();
   });
